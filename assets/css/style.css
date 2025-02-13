@@ -677,3 +677,22 @@ color-mix(in srgb, var(--c-brand-light), transparent 90%);
   color: color-mix(in srgb, var(--c-brand), transparent 30%);
   margin-bottom: 0;
 }
+
+
+/* About */
+.about-img{
+  border-radius: 10px;
+  box-shadow: 2px 9px 23px black;
+  transition: transform 0.3s ease-in-out;
+}
+.about-img:hover{
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Tab */
+.tab-icon{
+  width: 4em;
+}
+.logo-footer{
+  width: 13em;
+}
