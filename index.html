@@ -4,38 +4,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TAP DESIGNS</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-    />
+    <meta name="description" content="TAP Designs specializes in web development, app development, graphic design, logo design, UI design, and tech services. We create custom websites, mobile apps, and stunning visuals tailored for performance and aesthetics. Affordable pricing from ₹100 - ₹1499. Elevate your digital presence with TAP Designs.">
+    <meta name="keywords" content="TAP Designs, Web Development, Custom Websites, App Development, iOS, Android, Graphic Design, Logo Design, UI Design, Tech Services, Affordable Digital Solutions, ₹100 - ₹1499">    
+    <meta name="author" content="TAP Designs">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="assets/img/favicon.png" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
 
 <!-- Vendors -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-      <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-  
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 <link rel="icon" href="assets/images/flati.png" type="image/logo">
+<link rel="stylesheet" href="preload.css">
   </head>
 
   <body data-bs-spy="scroll" data-bs-target=".navbar">
@@ -79,11 +76,32 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
+            <!-- Dark Mode Toggle -->
+            <li class="nav-item d-flex align-items-center ms-3">
+              <span class="me-2">Dark Mode:</span>
+              <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="darkModeToggle">
+                  <label class="form-check-label" for="darkModeToggle">
+                      <i id="toggleIcon" class="bi bi-moon"></i>
+                  </label>
+              </div>
+          </li>
           </ul>
           <a href="#contact" class="btn btn-brand ms-lg-3">Get Started</a>
         </div>
       </div>
     </nav>
+
+      <!-- Preloader -->
+  <div id="preloader">
+  </div>
+
+        <!-- Popup Modal -->
+<div id="loadingPopup" class="popup" style="display: none;">
+  <div class="popup-content">
+    <p>Submitting your data...</p>
+  </div>
+</div>
 
     <!-- HERO -->
     <section id="hero" class="min-vh-100 d-flex align-items-center text-center">
@@ -118,7 +136,7 @@
             data-aos-delay="50"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">About us</h1>
+              <h1 class="display-4 fw-semibold nila-head">About us</h1>
               <div class="line"></div>
               <p>
                 TAP DESIGNS is a creative agency specializing in Web
@@ -132,8 +150,8 @@ Development, App Development, and Graphic Designing.
             <img class="about-img" src="./assets/images/about.jpg" alt="" />
           </div>
           <div data-aos="fade-down" data-aos-delay="150" class="col-lg-5">
-            <h1>About Tap Designs</h1>
-            <p class="mt-3 mb-4">
+            <h1 class="nila-head mt-3">About Tap Designs</h1>
+            <p class="mt-3 mb-4 nila-head">
               We turn ideas into reality with
 innovative solutions.
             </p>
@@ -142,7 +160,7 @@ innovative solutions.
                 <i class="ri-star-fill"></i>
               </div>
               <div>
-                <h5 class="mt-3">Quality works in time</h5>
+                <h5 class="mt-3 nila-head">Quality works in time</h5>
                 <!-- <p>
                   Consectetur adipisicing elit. Corporis nesciunt aut
                   temporibus!
@@ -154,7 +172,7 @@ innovative solutions.
                 <i class="ri-customer-service-line"></i>
               </div>
               <div>
-                <h5 class="mt-3">24*7 customer care services</h5>
+                <h5 class="mt-3 nila-head">24*7 customer care services</h5>
                 <!-- <p>
                   Consectetur adipisicing elit. Corporis nesciunt aut
                   temporibus!
@@ -166,7 +184,7 @@ innovative solutions.
                 <i class="ri-service-fill"></i>
               </div>
               <div>
-                <h5 class="mt-3">Assures customer's need</h5>
+                <h5 class="mt-3 nila-head">Assures customer's need</h5>
                 <!-- <p>
                   Consectetur adipisicing elit. Corporis nesciunt aut
                   temporibus!
@@ -188,7 +206,7 @@ innovative solutions.
             data-aos-delay="150"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">Awesome Services</h1>
+              <h1 class="display-4 fw-semibold nila-head">Awesome Services</h1>
               <div class="line"></div>
               <p>
                 Our Services Bringing Your Ideas to Life with Digital Excellence
@@ -210,6 +228,9 @@ innovative solutions.
               <p>
                 Custom websites tailored for performance and aesthetics.
               </p>
+              <div class="price-base">
+                <p>100₹ - 1499₹</p>
+              </div>
             </div>
           </div>
           <div
@@ -225,6 +246,9 @@ innovative solutions.
               <p>
                 Mobile solutions for iOS & Android.
               </p>
+              <div class="price-base">
+                <p>100₹ - 1499₹</p>
+              </div>
             </div>
           </div>
           <div
@@ -240,6 +264,9 @@ innovative solutions.
               <p>
                 Stunning visuals, logos, and branding materials.
               </p>
+              <div class="price-base">
+                <p>100₹ - 1499₹</p>
+              </div>
             </div>
           </div>
           <div
@@ -255,6 +282,9 @@ innovative solutions.
               <p>
                 We create unique and visually striking logos that capture your brand’s identity and leave a lasting impression.
               </p>
+              <div class="price-base">
+                <p>100₹ - 1499₹</p>
+              </div>
             </div>
           </div>
           <div
@@ -269,6 +299,9 @@ innovative solutions.
               <h5 class="mt-4 mb-3">UI Design</h5>
               <p>
                 We craft user-friendly and visually engaging interfaces that enhance user experience and drive engagement across web and mobile platforms</p>
+                <div class="price-base">
+                  <p>100₹ - 1499₹</p>
+                </div>
             </div>
           </div>
           <div
@@ -284,6 +317,9 @@ innovative solutions.
               <p>
                 From web development to cloud solutions, we offer a range of tech services to enhance your digital presence and streamline business operations.
               </p>
+              <div class="price-base">
+                <p>100₹ - 1499₹</p>
+              </div>
             </div>
           </div>
         </div>
@@ -297,7 +333,7 @@ innovative solutions.
         <div class="row gy-4">
           <div class="col-lg-3 col-md-6">
             <div class="stats-item d-flex align-items-center w-100 h-100">
-              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+              <i class="bi bi-emoji-smile flex-shrink-0"></i>
               <div>
                 <span
                   data-purecounter-start="0"
@@ -305,7 +341,7 @@ innovative solutions.
                   data-purecounter-duration="1"
                   class="purecounter"
                 ></span>
-                <p class="mx-4">Happy Clients</p>
+                <p class="mx-4 nila-count">Happy Clients</p>
               </div>
             </div>
           </div>
@@ -382,7 +418,7 @@ innovative solutions.
             data-aos-delay="150"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">Our Portfolio</h1>
+              <h1 class="display-4 fw-semibold nila-head">Our Portfolio</h1>
               <div class="line"></div>
               <p>
                 Our Work Speaks for Itself We have delivered top-tier projects across various industries,
@@ -395,10 +431,10 @@ helping businesses grow digitally.
           <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
             <div class="portfolio-item image-zoom">
               <div class="image-zoom-wrapper">
-                <img src="./assets/images/project-1.jpg" alt="" />
+                <img src="./assets/images/projects (4).jpg" alt="" />
               </div>
               <a
-                href="./assets/images/project-1.jpg"
+                href="./assets/images/projects (4).jpg"
                 data-fancybox="gallery"
                 class="iconbox"
                 ><i class="ri-search-2-line"></i
@@ -406,10 +442,10 @@ helping businesses grow digitally.
             </div>
             <div class="portfolio-item image-zoom mt-4">
               <div class="image-zoom-wrapper">
-                <img src="./assets/images/project-2.jpg" alt="" />
+                <img src="./assets/images/projects (5).jpg" alt="" />
               </div>
               <a
-                href="./assets/images/project-2.jpg"
+                href="./assets/images/projects (5).jpg"
                 data-fancybox="gallery"
                 class="iconbox"
                 ><i class="ri-search-2-line"></i
@@ -419,10 +455,10 @@ helping businesses grow digitally.
           <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
             <div class="portfolio-item image-zoom">
               <div class="image-zoom-wrapper">
-                <img src="./assets/images/project-3.jpg" alt="" />
+                <img src="./assets/images/projects (3).jpg" alt="" />
               </div>
               <a
-                href="./assets/images/project-3.jpg"
+                href="./assets/images/projects (3).jpg"
                 data-fancybox="gallery"
                 class="iconbox"
                 ><i class="ri-search-2-line"></i
@@ -430,10 +466,10 @@ helping businesses grow digitally.
             </div>
             <div class="portfolio-item image-zoom mt-4">
               <div class="image-zoom-wrapper">
-                <img src="./assets/images/project-4.jpg" alt="" />
+                <img src="./assets/images/projects (2).jpg" alt="" />
               </div>
               <a
-                href="./assets/images/project-4.jpg"
+                href="./assets/images/projects (2).jpg"
                 data-fancybox="gallery"
                 class="iconbox"
                 ><i class="ri-search-2-line"></i
@@ -443,10 +479,10 @@ helping businesses grow digitally.
           <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
             <div class="portfolio-item image-zoom">
               <div class="image-zoom-wrapper">
-                <img src="./assets/images/project-5.jpg" alt="" />
+                <img src="./assets/images/projects (6).jpg" alt="" />
               </div>
               <a
-                href="./assets/images/project-5.jpg"
+                href="./assets/images/projects (6).jpg"
                 data-fancybox="gallery"
                 class="iconbox"
                 ><i class="ri-search-2-line"></i
@@ -454,10 +490,10 @@ helping businesses grow digitally.
             </div>
             <div class="portfolio-item image-zoom mt-4">
               <div class="image-zoom-wrapper">
-                <img src="./assets/images/project-6.jpg" alt="" />
+                <img src="./assets/images/projects (1).jpg" alt="" />
               </div>
               <a
-                href="./assets/images/project-6.jpg"
+                href="./assets/images/projects (1).jpg"
                 data-fancybox="gallery"
                 class="iconbox"
                 ><i class="ri-search-2-line"></i
@@ -469,7 +505,7 @@ helping businesses grow digitally.
     </section>
 
     <!-- REVIEW -->
-    <section id="reviews" class="section-padding bg-light">
+    <section id="reviews" class="section-padding">
       <div class="container">
         <div class="row">
           <div
@@ -478,7 +514,7 @@ helping businesses grow digitally.
             data-aos-delay="150"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">Testimonials</h1>
+              <h1 class="display-4 fw-semibold nila-head">Testimonials</h1>
               <div class="line"></div>
               <p>
                 We love to craft digital experiances for brands rather than crap
@@ -502,21 +538,20 @@ helping businesses grow digitally.
                   <i class="ri-star-fill"></i>
                   <i class="ri-star-fill"></i>
                 </div>
-                <p>
-                  Amazing theme ipsum dolor sit amet consectetur adipisicing
-                  elit. Assumenda eum animi rerum ipsam impedit dicta
-                  voluptatem.
+                <p class="rev-nila">
+                  Absolutely amazing service! The attention to detail and the level of professionalism
+exceeded my expectations. Highly recommended!
                 </p>
               </div>
               <div class="review-person mt-4 d-flex align-items-center">
                 <img
                   class="rounded-circle"
-                  src="./assets/images/avatar-1.jpg"
+                  src="./assets/images/avaters (1).jpg"
                   alt=""
                 />
                 <div class="ms-3">
-                  <h5>Dianne Russell</h5>
-                  <small>UX Architect</small>
+                  <h5>Ethan Cole</h5>
+                  <small>Senior Software Engineer</small>
                 </div>
               </div>
             </div>
@@ -535,21 +570,20 @@ helping businesses grow digitally.
                   <i class="ri-star-fill"></i>
                   <i class="ri-star-fill"></i>
                 </div>
-                <p>
-                  Amazing theme ipsum dolor sit amet consectetur adipisicing
-                  elit. Assumenda eum animi rerum ipsam impedit dicta
-                  voluptatem.
+                <p class="rev-nila">
+                  This platform has transformed the way I work. It’s user-friendly, efficient, and the
+customer support is top-notch!
                 </p>
               </div>
               <div class="review-person mt-4 d-flex align-items-center">
                 <img
                   class="rounded-circle"
-                  src="./assets/images/avatar-2.jpg"
+                  src="./assets/images/avaters (2).jpg"
                   alt=""
                 />
                 <div class="ms-3">
-                  <h5>Dianne Russell</h5>
-                  <small>UX Architect</small>
+                  <h5>Olivia Bennett</h5>
+                  <small>Digital Marketing Specialist</small>
                 </div>
               </div>
             </div>
@@ -568,21 +602,20 @@ helping businesses grow digitally.
                   <i class="ri-star-fill"></i>
                   <i class="ri-star-fill"></i>
                 </div>
-                <p>
-                  Amazing theme ipsum dolor sit amet consectetur adipisicing
-                  elit. Assumenda eum animi rerum ipsam impedit dicta
-                  voluptatem.
+                <p class="rev-nila">
+                  I was blown away by the quality and innovation this service provides. It’s exactly what I
+needed to streamline my workflow!
                 </p>
               </div>
               <div class="review-person mt-4 d-flex align-items-center">
                 <img
                   class="rounded-circle"
-                  src="./assets/images/avatar-3.jpg"
+                  src="./assets/images/avaters (3).jpg"
                   alt=""
                 />
                 <div class="ms-3">
-                  <h5>Dianne Russell</h5>
-                  <small>UX Architect</small>
+                  <h5>Daniel Foster</h5>
+                  <small>Product Designer</small>
                 </div>
               </div>
             </div>
@@ -601,21 +634,20 @@ helping businesses grow digitally.
                   <i class="ri-star-fill"></i>
                   <i class="ri-star-fill"></i>
                 </div>
-                <p>
-                  Amazing theme ipsum dolor sit amet consectetur adipisicing
-                  elit. Assumenda eum animi rerum ipsam impedit dicta
-                  voluptatem.
+                <p class="rev-nila">
+                  Incredible experience! The team truly understands design and usability. My website
+has never looked or performed better!
                 </p>
               </div>
               <div class="review-person mt-4 d-flex align-items-center">
                 <img
                   class="rounded-circle"
-                  src="./assets/images/avatar-4.jpg"
+                  src="./assets/images/avaters (4).jpg"
                   alt=""
                 />
                 <div class="ms-3">
-                  <h5>Dianne Russell</h5>
-                  <small>UX Architect</small>
+                  <h5>Sophia Reynolds</h5>
+                  <small>UX/UI Consultant</small>
                 </div>
               </div>
             </div>
@@ -634,21 +666,20 @@ helping businesses grow digitally.
                   <i class="ri-star-fill"></i>
                   <i class="ri-star-fill"></i>
                 </div>
-                <p>
-                  Amazing theme ipsum dolor sit amet consectetur adipisicing
-                  elit. Assumenda eum animi rerum ipsam impedit dicta
-                  voluptatem.
+                <p class="rev-nila">
+                  The professionalism and creativity behind this service are outstanding. It has helped
+my business grow significantly!
                 </p>
               </div>
               <div class="review-person mt-4 d-flex align-items-center">
                 <img
                   class="rounded-circle"
-                  src="./assets/images/avatar-5.jpg"
+                  src="./assets/images/avaters (5).jpg"
                   alt=""
                 />
                 <div class="ms-3">
-                  <h5>Dianne Russell</h5>
-                  <small>UX Architect</small>
+                  <h5>Liam Carter</h5>
+                  <small>Business Development Manager</small>
                 </div>
               </div>
             </div>
@@ -667,21 +698,20 @@ helping businesses grow digitally.
                   <i class="ri-star-fill"></i>
                   <i class="ri-star-fill"></i>
                 </div>
-                <p>
-                  Amazing theme ipsum dolor sit amet consectetur adipisicing
-                  elit. Assumenda eum animi rerum ipsam impedit dicta
-                  voluptatem.
+                <p class="rev-nila">
+                  Such a seamless experience! The team was responsive and dedicated, and the final
+result was beyond my expectations!
                 </p>
               </div>
               <div class="review-person mt-4 d-flex align-items-center">
                 <img
                   class="rounded-circle"
-                  src="./assets/images/avatar-6.jpg"
+                  src="./assets/images/avaters (6).jpg"
                   alt=""
                 />
                 <div class="ms-3">
-                  <h5>Dianne Russell</h5>
-                  <small>UX Architect</small>
+                  <h5>Ava Mitchell</h5>
+                  <small>Content Strategist</small>
                 </div>
               </div>
             </div>
@@ -700,7 +730,7 @@ helping businesses grow digitally.
             data-aos-delay="150"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">Team Members</h1>
+              <h1 class="display-4 fw-semibold nila-head">Team Members</h1>
               <div class="line"></div>
               <p>
                 Meet Our Experts The passionate team behind TAP DESIGNS.
@@ -807,7 +837,8 @@ helping businesses grow digitally.
 
       <!-- Section Title -->
       <div class="section-title">
-              <h1 class="display-4 fw-semibold text-center">Our Clients</h1>
+              <h1 class="display-4 fw-semibold text-center nila-head">Our Clients</h1>
+              <div class="container">
               <div class="line"></div>
               <p>
                 We love to craft digital experiances for brands rather than crap
@@ -852,24 +883,26 @@ helping businesses grow digitally.
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/images/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client-8.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client (1).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client (2).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client (3).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client (4).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client (5).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client (6).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client (7).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client (8).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/images/clients/client (9).png" class="img-fluid" alt=""></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
 
       </div>
+    </div>
 
     </section><!-- /Clients Section -->
 
     <!-- CONTACT -->
-    <section class="section-padding bg-light" id="contact">
+    <section class="section-padding" id="contact">
       <div class="container">
         <div class="row">
           <div
@@ -892,12 +925,14 @@ helping businesses grow digitally.
           data-aos-delay="250"
         >
           <div class="col-lg-8">
-            <form action="#" class="row g-3 p-lg-5 p-4 bg-white theme-shadow">
+            <form action="" id="submit-form" class="row g-3 p-lg-5 p-4 theme-shadow">
               <div class="form-group col-lg-6">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Enter your name"
+                  name="Name"
+                  required
                 />
               </div>
               <div class="form-group col-lg-6">
@@ -905,6 +940,8 @@ helping businesses grow digitally.
                   type="number"
                   class="form-control"
                   placeholder="Enter phone number"
+                  name="Phone Number"
+                  required
                 />
               </div>
               <div class="form-group col-lg-12">
@@ -912,13 +949,28 @@ helping businesses grow digitally.
                   type="email"
                   class="form-control"
                   placeholder="Enter Email address"
+                  name="Email"
+                  required
                 />
+              </div>
+              <div class="form-group col-lg-12">
+                <select class="form-select form-control" name="Service" aria-label="Default select example" required>
+                  <option value="" selected>Select service</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="App Development">App Development</option>
+                  <option value="Graphic Design">Graphic Design</option>
+                  <option value="Logo Design">Logo Design</option>
+                  <option value="UI Design">UI Design</option>
+                  <option value="Tech Services">Tech Services</option>
+                </select>
               </div>
               <div class="form-group col-lg-12">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Enter subject"
+                  name="Subject"
+                  required
                 />
               </div>
               <div class="form-group col-lg-12">
@@ -927,10 +979,12 @@ helping businesses grow digitally.
                   rows="5"
                   class="form-control"
                   placeholder="Enter Message"
+                  name="Message"
+                  required
                 ></textarea>
               </div>
               <div class="form-group col-lg-12 d-grid">
-                <button class="btn btn-brand">Send Message</button>
+                <button type="submit" id="sbtid" class="btn btn-brand" onclick="sbt()">Send Message</button>
               </div>
             </form>
           </div>
@@ -987,13 +1041,14 @@ helping businesses grow digitally.
               <div class="line"></div>
               <ul>
                 <li>+91 9074726534</li>
-                <li>tap.designes@gmail.com</li>
+                <li>tap.designes.in@gmail.com</li>
                 <li>www.tapdesigns.in</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
+      <p class="text-center p-3">&copy 2024 - 2025</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1003,5 +1058,33 @@ helping businesses grow digitally.
     <!-- <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.1.0/dist/purecounter_vanilla.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+$("#submit-form").submit((e) => {
+    e.preventDefault();
+
+    // Show the loading popup
+    $("#loadingPopup").show();
+
+    $.ajax({
+        url: "https://script.google.com/macros/s/AKfycby8NGY-bKqUqH0Ud6eNkseqTDsN0Rge6oDKGxh9thMTAefalcGZKa79OAWjCDpF5Wlerg/exec",
+        data: $("#submit-form").serialize(),
+        method: "post",
+        success: function (response) {
+            alert("Thank you for choosing our service, we will contact you shortly!!");
+            // Hide the loading popup after success
+            $("#loadingPopup").hide();
+            window.location.reload();
+            // window.location.href="https://google.com"
+        },
+        error: function (err) {
+            alert("Something went wrong");
+            // Hide the loading popup if there was an error
+            $("#loadingPopup").hide();
+        }
+    });
+});
+
+  </script>
   </body>
 </html>

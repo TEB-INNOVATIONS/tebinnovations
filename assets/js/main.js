@@ -36,3 +36,52 @@ AOS.init({
   }
 
   window.addEventListener("load", initSwiper);
+
+  // Submit
+
+  function sbt() {
+    let button = document.getElementById("sbtid");
+    if (button.innerText === "Send Message") {
+        button.innerText = "Submitted!";
+    } else {
+        button.innerText = "Send Message";
+    }
+}
+
+    // Loding 
+
+    var loader = document.getElementById('preloader');
+
+    window.addEventListener('load', function(){
+      loader.style.display = 'none';
+    })
+
+
+    // Nila
+
+     // Function to toggle dark mode
+     function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+          localStorage.setItem("theme", "dark");
+          document.getElementById("darkModeToggle").checked = true;
+          document.getElementById("toggleIcon").classList.replace("bi-moon", "bi-sun");
+      } else {
+          localStorage.setItem("theme", "light");
+          document.getElementById("darkModeToggle").checked = false;
+          document.getElementById("toggleIcon").classList.replace("bi-sun", "bi-moon");
+      }
+  }
+
+  // Load theme from localStorage
+  window.onload = function () {
+      if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark-mode");
+          document.getElementById("darkModeToggle").checked = true;
+          document.getElementById("toggleIcon").classList.replace("bi-moon", "bi-sun");
+      }
+  };
+
+  // Event listener
+  document.getElementById("darkModeToggle").addEventListener("change", toggleDarkMode);

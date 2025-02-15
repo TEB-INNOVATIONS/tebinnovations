@@ -681,7 +681,7 @@ color-mix(in srgb, var(--c-brand-light), transparent 90%);
 
 /* About */
 .about-img{
-  border-radius: 10px;
+  border-radius: 50% 10% 50% 10%;
   box-shadow: 2px 9px 23px black;
   transition: transform 0.3s ease-in-out;
 }
@@ -695,4 +695,155 @@ color-mix(in srgb, var(--c-brand-light), transparent 90%);
 }
 .logo-footer{
   width: 13em;
+}
+.price-base p{
+  font-size: 1.5em;
+  font-family: var(--font-base);
+  letter-spacing: 2px;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* 404 */
+.ferror img{
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+.ferror h2{
+  font-family: var(--font-base);
+  text-align: center;
+  color: var(--c-brand);
+  font-family: 4em;
+}
+.ferror p{
+  text-align: center;
+  font-size: 1em;
+  padding: 1em;
+}
+.ferror button{
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+
+/* nila */
+  /* Light Mode (Default) */
+  body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #212529 !important;
+    color: white !important;
+}
+
+.dark-mode .navbar {
+    background-color: #343a40 !important;
+}
+
+.dark-mode .navbar-brand,
+.dark-mode .nav-link {
+    color: white !important;
+}
+
+.dark-mode .nila-head,
+.dark-mode #reviews h5,
+.dark-mode #team h4,
+.dark-mode .nila-count,
+.dark-mode #team p {
+    color: white !important;
+}
+.dark-mode .stats-item{
+  background-color: #212529;
+}
+.dark-mode .team-member{
+  background-color: #343a40;
+}
+.dark-mode form{
+  background-color: #343a40;
+}
+.dark-mode form input, .dark-mode form select, .dark-mode form textarea{
+  background-color: #212529;
+}
+
+
+.dark-mode .rev-nila {
+    color: black !important;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: white;
+    transition: 0.4s;
+}
+.dark-mode .tab-icon {
+  filter: invert(1);
+}
+.dark-mode {
+  color: white;
+}
+
+.dark-mode ::placeholder, .dark-mode input, .dark-mode textarea {
+  color: white !important;
+  background-color: #212529 !important;
+}
+.dark-mode select{
+  color: white;
+}
+.dark-mode .service h5{
+  color: white;
+}
+/* Dark Mode Toggle Switch */
+.form-check-input {
+    width: 50px;
+    height: 25px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-check-input:checked {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+}
+form{
+  background-color: white;
+}
+
+/* Custom cursor */
+body {
+  cursor: url('/assets/images/c5.png'), auto;
 }
