@@ -823,6 +823,9 @@ color-mix(in srgb, var(--c-brand-light), transparent 90%);
 .dark-mode footer{
   background-color: black !important;
 }
+.dark-mode .member-info span{
+  color: var(--c-brand-light) !important;
+}
 /* Dark Mode Toggle Switch */
 .form-check-input {
     width: 50px;

@@ -1,7 +1,7 @@
 /* Preloader */
 #preloader{
   background: white url('assets/images/loading.gif') no-repeat center center;
-  background-size: 40%;
+  background-size: 90%;
   height: 100vh;
   width: 100%;
   position: fixed;
