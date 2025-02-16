@@ -826,6 +826,10 @@ color-mix(in srgb, var(--c-brand-light), transparent 90%);
 .dark-mode .member-info span{
   color: var(--c-brand-light) !important;
 }
+.dark-mode .navbar-toggler-icon {
+  filter: invert(100%); /* White color */
+}
+
 /* Dark Mode Toggle Switch */
 .form-check-input {
     width: 50px;
@@ -857,3 +861,4 @@ body {
 .coptxt{
   margin: 0;
 }
+
