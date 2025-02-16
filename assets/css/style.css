@@ -5,9 +5,9 @@
 /* VARIABLES */
 :root {
   --c-dark: #212529;
-  --c-brand: #4e57d4;
-  --c-brand-light: #6970dd;
-  --c-brand-rgb: 78, 87, 212;
+  --c-brand: #9a0101;
+  --c-brand-light: #c62020;
+  --c-brand-rgb: 250, 120, 120;
   --c-body: #727272;
   --font-base: "ClashDisplay", sans-serif;
   --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
@@ -681,9 +681,10 @@ color-mix(in srgb, var(--c-brand-light), transparent 90%);
 
 /* About */
 .about-img{
-  border-radius: 50% 10% 50% 10%;
-  box-shadow: 2px 9px 23px black;
+  /* border-radius: 50% 10% 50% 10%;
+  box-shadow: 2px 9px 23px black; */
   transition: transform 0.3s ease-in-out;
+  width: 80%;
 }
 .about-img:hover{
   transform: scale(1.1); /* Slight zoom effect */
@@ -691,7 +692,7 @@ color-mix(in srgb, var(--c-brand-light), transparent 90%);
 
 /* Tab */
 .tab-icon{
-  width: 4em;
+  width: 3em;
 }
 .logo-footer{
   width: 13em;
@@ -766,7 +767,8 @@ color-mix(in srgb, var(--c-brand-light), transparent 90%);
 }
 
 .dark-mode .navbar {
-    background-color: #343a40 !important;
+    /* background-color: #343a40 !important; */
+    background-color: black !important;
 }
 
 .dark-mode .navbar-brand,
@@ -804,9 +806,6 @@ color-mix(in srgb, var(--c-brand-light), transparent 90%);
     background-color: white;
     transition: 0.4s;
 }
-.dark-mode .tab-icon {
-  filter: invert(1);
-}
 .dark-mode {
   color: white;
 }
@@ -820,6 +819,9 @@ color-mix(in srgb, var(--c-brand-light), transparent 90%);
 }
 .dark-mode .service h5{
   color: white;
+}
+.dark-mode footer{
+  background-color: black !important;
 }
 /* Dark Mode Toggle Switch */
 .form-check-input {
@@ -846,4 +848,9 @@ form{
 /* Custom cursor */
 body {
   cursor: url('/assets/images/c5.png'), auto;
+}
+
+
+.coptxt{
+  margin: 0;
 }
