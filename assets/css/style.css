@@ -530,13 +530,13 @@ color-mix(in srgb, var(--c-brand-light), transparent 90%);
   opacity: 0;
   border-radius: 4px;
   transition: 0.5s;
-  background: color-mix(in srgb, var(--c-body), transparent 60%);
+  background: color-mix(in srgb, var(--c-body), transparent 20%);
   z-index: 2;
 }
 
 .team .team-member .social a {
   transition: color 0.3s;
-  color: color-mix(in srgb, var(--c-brand), transparent 50%);
+  color: color-mix(in srgb, var(--c-brand), transparent 10%);
   margin: 15px 12px;
   display: block;
   line-height: 0;
