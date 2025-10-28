@@ -155,7 +155,7 @@
 
   </head>
 
-  <body data-bs-spy="scroll" data-bs-target=".navbar">
+  <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
       <div class="container">
@@ -221,10 +221,31 @@
     </div>
   </div>
 
-        <!-- Popup Modal -->
+        <!-- Loading Popup Modal -->
 <div id="loadingPopup" class="popup" style="display: none;">
   <div class="popup-content">
     <p>Submitting your data...</p>
+  </div>
+</div>
+
+<!-- Thank You Popup Modal -->
+<div id="thankYouPopup" class="popup thank-you-popup" style="display: none;">
+  <div class="popup-overlay" onclick="closeThankYouPopup()"></div>
+  <div class="thank-you-content">
+    <button class="close-btn" onclick="closeThankYouPopup()">&times;</button>
+    <div class="success-icon">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle class="success-circle" cx="50" cy="50" r="45" fill="none" stroke="#9a0101" stroke-width="4"/>
+        <polyline class="success-check" points="30,50 45,65 70,35" fill="none" stroke="#9a0101" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h2 class="thank-you-title">Thank You!</h2>
+    <p class="thank-you-message">Your message has been successfully submitted. We'll get back to you shortly!</p>
+    <div class="thank-you-details">
+      <p><i class="ri-mail-line"></i> Check your email for confirmation</p>
+      <p><i class="ri-time-line"></i> We typically respond within 24 hours</p>
+    </div>
+    <button class="btn btn-brand" onclick="closeThankYouPopup()">Got it!</button>
   </div>
 </div>
 
@@ -272,7 +293,7 @@ Development, App Development, and Graphic Designing.
         </div>
         <div class="row justify-content-between align-items-center">
           <div class="col-lg-6" data-aos="fade-down" data-aos-delay="50">
-            <img class="about-img img-fluid p-2" src="./assets/images/alt-features.png" alt="teb innovations features" />
+            <img class="about-img img-fluid p-2" src="./assets/images/who teb.png" alt="teb innovations features" />
           </div>
           <div data-aos="fade-down" data-aos-delay="150" class="col-lg-5">
             <h1 class="nila-head mt-5">About Teb Innovations</h1>
@@ -737,12 +758,12 @@ helping businesses grow digitally.
                 />
                 <div class="ms-3">
                   <h5>Sandeep U</h5>
-                  <small>IT Teacher, PM Saptshss Kakkove</small>
+                  <small>IT Teacher, PMSAPTHSS Kakkove</small>
                 </div>
               </div>
             </div>
           </div>
-          <!-- <div
+          <div
             class="col-lg-4 col-sm-6"
             data-aos="fade-down"
             data-aos-delay="450"
@@ -757,19 +778,18 @@ helping businesses grow digitally.
                   <i class="ri-star-fill"></i>
                 </div>
                 <p class="rev-nila">
-                  Incredible experience! The team truly understands design and usability. My website
-has never looked or performed better!
+                  TEB Innovations designed a beautiful static website for our company and efficiently managed our YouTube channel and content. Their creativity and professionalism truly enhanced our brand’s online presence. Highly recommended!
                 </p>
               </div>
               <div class="review-person mt-4 d-flex align-items-center">
                 <img
                   class="rounded-circle"
-                  src="./assets/images/avaters (4).jpg"
+                  src="./assets/images/clients new (1).png"
                   alt=""
                 />
                 <div class="ms-3">
-                  <h5>Sophia Reynolds</h5>
-                  <small>UX/UI Consultant</small>
+                  <h5>Jabir Ali</h5>
+                  <small>Cloud Developer at IBM ISDL</small>
                 </div>
               </div>
             </div>
@@ -789,19 +809,18 @@ has never looked or performed better!
                   <i class="ri-star-fill"></i>
                 </div>
                 <p class="rev-nila">
-                  The professionalism and creativity behind this service are outstanding. It has helped
-my business grow significantly!
+                  TEB Innovations provided excellent graphic design and SEO support for our brand. Their designs were creative and eye-catching, and their SEO strategies greatly improved our online visibility. Highly satisfied with their work!
                 </p>
               </div>
               <div class="review-person mt-4 d-flex align-items-center">
                 <img
                   class="rounded-circle"
-                  src="./assets/images/avaters (5).jpg"
+                  src="./assets/images/clients new (3).png"
                   alt=""
                 />
                 <div class="ms-3">
-                  <h5>Liam Carter</h5>
-                  <small>Business Development Manager</small>
+                  <h5>Afzal Rahman</h5>
+                  <small>SDE at JioStar</small>
                 </div>
               </div>
             </div>
@@ -821,23 +840,22 @@ my business grow significantly!
                   <i class="ri-star-fill"></i>
                 </div>
                 <p class="rev-nila">
-                  Such a seamless experience! The team was responsive and dedicated, and the final
-result was beyond my expectations!
+                  TEB Innovations did an amazing job with our video editing, graphic design, and AI helpline setup. Their team is highly skilled, creative, and always delivers on time. The results exceeded our expectations — truly a reliable and innovative team!
                 </p>
               </div>
               <div class="review-person mt-4 d-flex align-items-center">
                 <img
                   class="rounded-circle"
-                  src="./assets/images/avaters (6).jpg"
+                  src="./assets/images/clients new (2).png"
                   alt=""
                 />
                 <div class="ms-3">
-                  <h5>Ava Mitchell</h5>
-                  <small>Content Strategist</small>
+                  <h5>Mohammed Shan</h5>
+                  <small></small>
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </section>
@@ -949,72 +967,263 @@ result was beyond my expectations!
     </section>
 
 
-     <!-- Clients Section -->
-     <section id="clients" class="clients section">
+     <!-- Clients Section - Redesigned -->
+     <section id="clients" class="clients section section-padding">
 
       <!-- Section Title -->
       <div class="container">
-        <div class="section-title text-center">
-          <h1 class="display-4 fw-semibold nila-head">Our Clients</h1>
+        <div class="section-title text-center" data-aos="fade-down">
+          <h1 class="display-4 fw-semibold nila-head">Our Trusted Partners</h1>
           <div class="line"></div>
           <p>
-            Meet our valuable clients. And also we will place your valuable logo here...
+            Building success together with amazing brands and businesses worldwide
           </p>
         </div>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+        <!-- Interactive Client Grid -->
+        <div class="clients-grid" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/images/clients/client (1).png" class="img-fluid" alt="Teb Innovations Clients"></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client (2).png" class="img-fluid" alt="Teb Innovations Clients"></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client (3).png" class="img-fluid" alt="Teb Innovations Clients"></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client (4).png" class="img-fluid" alt="Teb Innovations Clients"></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client (5).png" class="img-fluid" alt="Teb Innovations Clients"></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client (6).png" class="img-fluid" alt="Teb Innovations Clients"></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client (7).png" class="img-fluid" alt="Teb Innovations Clients"></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client (8).png" class="img-fluid" alt="Teb Innovations Clients"></div>
-            <div class="swiper-slide"><img src="assets/images/clients/client (9).png" class="img-fluid" alt="Teb Innovations Clients"></div>
+          <!-- Client Card 1 -->
+          <div class="client-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/client (1).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="swiper-pagination"></div>
+
+          <!-- Client Card 2 -->
+          <div class="client-card" data-aos="zoom-in" data-aos-delay="150">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/client (2).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Card 3 -->
+          <div class="client-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/client (3).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Card 4 -->
+          <div class="client-card" data-aos="zoom-in" data-aos-delay="250">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/client (4).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Card 5 -->
+          <div class="client-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/client (5).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Card 6 -->
+          <div class="client-card" data-aos="zoom-in" data-aos-delay="350">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/client (6).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Card 7 -->
+          <div class="client-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/client (7).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Card 8 -->
+          <div class="client-card" data-aos="zoom-in" data-aos-delay="450">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/client (8).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Card 9 -->
+          <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/client (9).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- More 2.0 clients -->
+
+          <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/2.0 clients (1).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/2.0 clients (2).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/2.0 clients (3).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/2.0 clients (4).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/2.0 clients (5).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/2.0 clients (6).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/2.0 clients (7).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/2.0 clients (8).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/2.0 clients (9).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/2.0 clients (10).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="client-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="client-card-inner">
+              <div class="client-card-front">
+                <img src="assets/images/clients/2.0 clients (11).png" class="img-fluid" alt="Teb Innovations Client">
+                <div class="client-overlay">
+                  <div class="client-shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
+        <!-- Call to Action -->
+        <div class="clients-cta text-center mt-5" data-aos="fade-up" data-aos-delay="600">
+          <p class="text-muted mb-3">Join our growing family of satisfied clients</p>
+          <a href="#contact" class="btn btn-brand">Become a Partner</a>
+        </div>
       </div>
-    </div>
 
     </section><!-- /Clients Section -->
 
@@ -1185,13 +1394,40 @@ result was beyond my expectations!
   
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./assets/js/navbar.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/futuristic.js"></script>
+    <script src="./assets/js/parallax.js"></script>
+    <script src="./assets/js/clients.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.1.0/dist/purecounter_vanilla.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
+// Thank You Popup Functions
+function showThankYouPopup() {
+    const popup = document.getElementById('thankYouPopup');
+    popup.style.display = 'flex';
+    setTimeout(() => {
+        popup.classList.add('show');
+    }, 10);
+
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+}
+
+function closeThankYouPopup() {
+    const popup = document.getElementById('thankYouPopup');
+    popup.classList.remove('show');
+    setTimeout(() => {
+        popup.style.display = 'none';
+        document.body.style.overflow = '';
+        // Reset form and reload page
+        window.location.reload();
+    }, 300);
+}
+
+// Form Submission
 $("#submit-form").submit((e) => {
     e.preventDefault();
 
@@ -1203,18 +1439,30 @@ $("#submit-form").submit((e) => {
         data: $("#submit-form").serialize(),
         method: "post",
         success: function (response) {
-            alert("Thank you for choosing our service, we will contact you shortly!!");
-            // Hide the loading popup after success
+            // Hide the loading popup
             $("#loadingPopup").hide();
-            window.location.reload();
-            // window.location.href="https://google.com"
+
+            // Show the beautiful thank you popup
+            showThankYouPopup();
         },
         error: function (err) {
-            alert("Something went wrong");
             // Hide the loading popup if there was an error
             $("#loadingPopup").hide();
+
+            // Show error alert
+            alert("Something went wrong. Please try again later.");
         }
     });
+});
+
+// Close popup on ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const popup = document.getElementById('thankYouPopup');
+        if (popup && popup.classList.contains('show')) {
+            closeThankYouPopup();
+        }
+    }
 });
 
   </script>
