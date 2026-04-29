@@ -194,6 +194,9 @@
               <a class="nav-link" href="#team">Team</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="https://blog.tebinnovations.in/" target="_blank">Blog</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
             <!-- Dark Mode Toggle -->
@@ -1333,6 +1336,7 @@ helping businesses grow digitally.
                 Think . Envolve . Build
               </p>
               <div class="social-icons">
+                <a href="https://www.youtube.com/@TEBInnovations" target="_blank"><i class="ri-youtube-fill"></i></a>
                 <a href="https://www.instagram.com/teb_innovations/" target="_blank"><i class="ri-instagram-fill"></i></a>
                 <a href="https://github.com/TEB-INNOVATIONS" target="_blank"><i class="ri-github-fill"></i></a>
                 <a href="https://api.whatsapp.com/send?phone=919074726534" target="_blank"><i class="ri-whatsapp-fill"></i></a>
@@ -1371,7 +1375,7 @@ helping businesses grow digitally.
           </div>
         </div>
       </div>
-      <p class="text-center coptxt">&copy 2024 - 2025</p>
+      <p class="text-center coptxt">&copy; <span id="year"></span></p>
     </footer>
     
 
@@ -1466,5 +1470,12 @@ document.addEventListener('keydown', function(e) {
 });
 
   </script>
+
+  <!-- Year fetch -->
+
+  <script>
+  const currentYear = new Date().getFullYear();
+  document.getElementById("year").textContent = `2024 - ${currentYear}`;
+</script>
   </body>
 </html>
