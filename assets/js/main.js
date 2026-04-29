@@ -90,18 +90,32 @@ AOS.init({
 function fetchBloggerFeed(url) {
     return new Promise((resolve, reject) => {
         const callbackName = 'blogger_cb_' + Math.round(100000 * Math.random());
-        
+        let script;
+
+        // Timeout fallback after 10 seconds
+        const timer = setTimeout(function () {
+            if (window[callbackName]) {
+                delete window[callbackName];
+                if (script && script.parentNode) script.parentNode.removeChild(script);
+                reject(new Error('Blogger feed request timed out'));
+            }
+        }, 10000);
+
         window[callbackName] = function(data) {
+            clearTimeout(timer);
             delete window[callbackName];
-            document.body.removeChild(script);
+            if (script && script.parentNode) script.parentNode.removeChild(script);
             resolve(data);
         };
 
-        const script = document.createElement('script');
-        script.src = url + '&callback=' + callbackName;
+        script = document.createElement('script');
+        // Append callback param correctly (URL may already have '?')
+        const separator = url.includes('?') ? '&' : '?';
+        script.src = url + separator + 'callback=' + callbackName;
         script.onerror = function() {
+            clearTimeout(timer);
             delete window[callbackName];
-            document.body.removeChild(script);
+            if (script && script.parentNode) script.parentNode.removeChild(script);
             reject(new Error('Failed to load Blogger feed'));
         };
         document.body.appendChild(script);
@@ -113,26 +127,37 @@ async function fetchLatestBlogs() {
     const blogContainer = document.getElementById("blog-container");
     if (!blogContainer) return;
 
+    // Show skeleton loader while fetching
+    blogContainer.innerHTML = `
+        <div class="col-12 text-center py-4">
+            <div class="spinner-border" style="color:#9a0101;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2 text-muted">Loading latest posts...</p>
+        </div>`;
+
+    // Primary feed URL — uses the JSON-in-script (JSONP) endpoint supported by Blogger
+    const feedUrl = 'https://blog.tebinnovations.in/feeds/posts/default?alt=json-in-script&max-results=3';
+
     try {
-        // We use JSONP to bypass CORS because Blogger's feed does not support direct fetch() requests from different origins.
-        const data = await fetchBloggerFeed("https://blog.tebinnovations.in/feeds/posts/default?alt=json-in-script");
-        
+        const data = await fetchBloggerFeed(feedUrl);
+
         // Get the latest 3 posts
         const entries = data.feed.entry || [];
         const latestPosts = entries.slice(0, 3);
-        
-        let htmlContent = "";
-        
+
         if (latestPosts.length === 0) {
             blogContainer.innerHTML = "<div class='col-12 text-center'><p>No blog posts available at the moment.</p></div>";
             return;
         }
 
+        let htmlContent = "";
+
         latestPosts.forEach((post, index) => {
             const title = post.title.$t;
-            
+
             // Extract the original blog URL
-            let postUrl = "";
+            let postUrl = "#";
             if (post.link) {
                 post.link.forEach(link => {
                     if (link.rel === "alternate" && link.type === "text/html") {
@@ -140,29 +165,33 @@ async function fetchLatestBlogs() {
                     }
                 });
             }
-            
+
             // Extract published date
             const publishedDate = new Date(post.published.$t);
             const options = { year: 'numeric', month: 'short', day: 'numeric' };
             const formattedDate = publishedDate.toLocaleDateString('en-US', options);
-            
+
             // Extract content to get excerpt and image
             const contentHTML = post.content ? post.content.$t : (post.summary ? post.summary.$t : "");
-            
-            // Temporary element to parse HTML
+
+            // Extract image — prefer media$thumbnail (always populated by Blogger)
+            let imageUrl = "assets/images/tab.png";
+            if (post.media$thumbnail && post.media$thumbnail.url) {
+                // Use a larger size by removing size constraints from the URL
+                imageUrl = post.media$thumbnail.url.replace(/s72-c|s72-w\d+-h\d+-c/, 's600');
+            } else {
+                const tempDiv2 = document.createElement("div");
+                tempDiv2.innerHTML = contentHTML;
+                const imgEl = tempDiv2.querySelector("img");
+                if (imgEl) imageUrl = imgEl.src;
+            }
+            // Extract plain text for excerpt
             const tempDiv = document.createElement("div");
             tempDiv.innerHTML = contentHTML;
-            
-            // Extract image
-            const imgEl = tempDiv.querySelector("img");
-            // If no image, use a professional placeholder (hero image from the site)
-            const imageUrl = imgEl ? imgEl.src : "assets/images/hero-1.jpg";
-            
-            // Extract plain text for excerpt
             const plainText = tempDiv.textContent || tempDiv.innerText || "";
             let excerpt = plainText.trim().substring(0, 100);
             if (plainText.length > 100) excerpt += "...";
-            
+
             // Delay for animation
             const delay = 150 + (index * 100);
 
@@ -170,7 +199,7 @@ async function fetchLatestBlogs() {
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${delay}">
                     <div class="blog-card">
                         <div class="blog-img-wrapper">
-                            <img src="${imageUrl}" class="blog-img" alt="${title}" onerror="this.src='assets/images/hero-1.jpg'">
+                            <img src="${imageUrl}" class="blog-img" alt="${title}" onerror="this.src='assets/images/tab.png'">
                         </div>
                         <div class="blog-content">
                             <div class="blog-date">
@@ -184,16 +213,21 @@ async function fetchLatestBlogs() {
                 </div>
             `;
         });
-        
+
         blogContainer.innerHTML = htmlContent;
-        
+
     } catch (error) {
         console.error("Error fetching blog posts:", error);
-        blogContainer.innerHTML = "<div class='col-12 text-center'><p>Failed to load blog posts. Please try again later.</p></div>";
+        blogContainer.innerHTML = `
+            <div class='col-12 text-center py-4'>
+                <p class='text-muted'>Could not load blog posts right now.</p>
+                <a href='https://blog.tebinnovations.in/' target='_blank' class='btn btn-brand mt-2'>Visit Our Blog</a>
+            </div>`;
     }
 }
 
 // Call the function on DOM content loaded
 document.addEventListener("DOMContentLoaded", function() {
     fetchLatestBlogs();
-});
+});
+
